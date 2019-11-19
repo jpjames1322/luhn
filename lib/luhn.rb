@@ -1,7 +1,7 @@
 module Luhn
   def self.is_valid?(number)
     number = number.to_s.chars.reverse
-    number = number.inject(:+)
+    number = number.map(&:to_i)
     sum = 0
     number.each_with_index do |a, b|
       if b.odd?
